@@ -1,1 +1,1 @@
-# Basic-Checkers
+# Connect 4
