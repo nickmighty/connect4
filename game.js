@@ -1,3 +1,5 @@
+
+
 class Game {
     constructor(playerRed, playerBlack, whoStarts) {
         this.playerRed = playerRed;
@@ -14,7 +16,9 @@ class Game {
     }
 
     showGameBoard() {
-        return this.gameBoard;
+        // console.log("\x1b[33m")
+        return Object.values(this.gameBoard);
+        // return this.gameBoard;
     }
 
     addToBoard(num) {
@@ -111,7 +115,6 @@ class Game {
         const indexOf = reversedKeys.indexOf(reversedKeys[num]);
         let count = 0;
         for (let i = indexOf; i > -1; i--) {
-            console.log(reversedKeys[i])
             if (this.gameBoard[reversedKeys[i]][col] === player) {
                 count++
                 if (count === 4) {  
