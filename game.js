@@ -34,6 +34,7 @@ class Game {
             : this.currentTurn = this.playerRed;
     }
 
+   // Win logic could be better /// 
     checkToWin(y, x, player) {
         const length = Object.keys(this.gameBoard).length - 1;
         this.checkBottom(x + y, player);
