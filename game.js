@@ -1,5 +1,3 @@
-
-
 class Game {
     constructor(playerRed, playerBlack, whoStarts) {
         this.playerRed = playerRed;
@@ -25,7 +23,10 @@ class Game {
             if (!this.gameBoard[key][num]) {
                 const indexOfKey = reversedKeys.indexOf(key);
                 this.gameBoard[key][num] = this.currentTurn;
-                this.checkToWin(indexOfKey, num, this.currentTurn);
+                const isWin = this.checkToWin(indexOfKey, num, this.currentTurn);
+                if (isWin) {
+                    return isWin;
+                }
                 break;
             }
         }
@@ -34,13 +35,20 @@ class Game {
             : this.currentTurn = this.playerRed;
     }
 
+    getAvailable() {
+        const reversedKeys = Object.keys(this.gameBoard);
+        return this.gameBoard[reversedKeys[0]].map((e, i) => e === "" ? i : "").filter(e => typeof e === "number");
+    }
+
    // Win logic could be better /// 
     checkToWin(y, x, player) {
         const length = Object.keys(this.gameBoard).length - 1;
-        this.checkBottom(x + y, player);
-        this.checkTop(length - y + x, player);
-        this.checkHori(y, player);
-        this.checkVert(y, x, player)
+        if ( this.checkBottom(x + y, player) || this.checkTop(length - y + x, player)
+        || this.checkHori(y, player) || this.checkVert(y, x, player) ) {
+            return true;
+        } else {
+            false;
+        }
     }
 
     checkBottom(num, player) {
@@ -51,7 +59,8 @@ class Game {
                 if (this.gameBoard[key][num] === player) {
                     count++
                     if (count === 4) {
-                        console.log(player + " " + count)
+                        // console.log(player + " " + count)
+                        return true;
                     }
                 } else {
                     count = 0;
@@ -69,7 +78,8 @@ class Game {
                 if (this.gameBoard[key][num] === player) {
                     count++
                     if (count === 4) {
-                        console.log(player + " " + count)
+                        // console.log(player + " " + count)
+                        return true;
                     }
                 } else {
                     count = 0;
@@ -87,7 +97,8 @@ class Game {
             if (this.gameBoard[key][i] === player) {
                 count++
                 if (count === 4) {  
-                    console.log(player + " " + count)
+                    // console.log(player + " " + count)
+                    return true;
                 }
             } else {
                 count = 0;
@@ -104,7 +115,8 @@ class Game {
             if (this.gameBoard[reversedKeys[i]][col] === player) {
                 count++
                 if (count === 4) {  
-                    console.log(player + " " + count)
+                    // console.log(player + " " + count)
+                    return true;
                 }
             } else {
                 count = 0;
@@ -112,7 +124,5 @@ class Game {
         }
     }
 }
-
-
 
 module.exports = Game
