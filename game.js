@@ -1,9 +1,9 @@
 
 
 class Game {
-    constructor(playerRed, playerBlack, whoStarts) {
+    constructor(playerRed, playerWhite, whoStarts) {
         this.playerRed = playerRed;
-        this.playerBlack = playerBlack;
+        this.playerWhite = playerWhite;
         this.currentTurn = whoStarts;
         this.gameBoard = {
             f: ["", "", "", "", "", "", ""],
@@ -35,7 +35,7 @@ class Game {
             }
         }
         this.currentTurn === this.playerRed
-            ? this.currentTurn = this.playerBlack
+            ? this.currentTurn = this.playerWhite
             : this.currentTurn = this.playerRed;
     }
 

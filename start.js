@@ -21,7 +21,14 @@ let header = head.map((e, i) => {
         headerColor: "cyan",
         color: "white",
         align: "center",
-        width: 20
+        width: 7,
+        formatter: function (value) {
+            return value === "red" 
+                ? this.style("●", "red")
+                : value === "white" 
+                ? this.style("●", "white")
+                : "";
+        }
     }
 });
 
@@ -49,10 +56,10 @@ function turn() {
 
 
 
-function initGame(playerOne, playerTwo) {
-    let colorOne = "O";
-    let colorTwo = "X";
-    game = new Game(colorOne, colorTwo, colorOne);
+function initGame() {
+    let colorRed = "red";
+    let colorwhite = "white";
+    game = new Game(colorRed, colorwhite, colorRed);
     const render = Table(header, game.showGameBoard(), null, options).render();
     console.log(render)
     turn();
