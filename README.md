@@ -30,7 +30,7 @@ tty-table
 
 ### **Usage**
 
-![Screen Shot 2022-06-05 at 8 37 09 PM](https://user-images.githubusercontent.com/67135603/172080724-b1f19a2c-6b4e-4549-baa7-b5c21fddae7a.png)
+![Screen Shot 2022-06-05 at 8 48 16 PM](https://user-images.githubusercontent.com/67135603/172081390-b5e7bd93-32f1-4a03-839f-b132c1e01a38.png)
 
 
 ---
