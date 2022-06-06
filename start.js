@@ -1,11 +1,11 @@
 const inquirer = require('inquirer');
+const figlet = require('figlet');
 const Table = require('tty-table');
 const Game = require('./game.js');
 let game;
 
-
 const options = {
-    borderStyle: "solid",
+    borderStyle: "dashed",
     borderColor: "yellow",
     headerAlign: "center",
     align: "left",
@@ -35,7 +35,7 @@ let header = head.map((e, i) => {
 function turn() {
     inquirer.prompt([{
         type: "list",
-        message: "choose your turn",
+        message: "It's your turn",
         name: "number",
         choices: game.getAvailable()
     }])
@@ -44,7 +44,7 @@ function turn() {
             const render = Table(header, game.showGameBoard(), null, options).render();
             console.log(render)
             if (checkWin) {
-                console.log("winner");
+                printWinner(checkWin);
                 return;
             }
             turn();
@@ -54,6 +54,21 @@ function turn() {
         });
 }
 
+function printWinner(winner) {
+    figlet.text(`Congrats ${winner}!`, {
+        font: 'digital',
+        horizontalLayout: 'full',
+        verticalLayout: 'full',
+        width: 100,
+    }, function(err, data) {
+        if (err) {
+            console.log('Something went wrong...');
+            console.dir(err);
+            return;
+        }
+        console.log(data);
+    });
+}
 
 
 function initGame() {
@@ -65,4 +80,18 @@ function initGame() {
     turn();
 }
 
-initGame();
+figlet.text(`Connect Four`, {
+    horizontalLayout: 'full',
+    verticalLayout: 'full',
+    width: 100,
+}, function(err, data) {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log("")
+    console.log(data);
+    initGame();
+});
+

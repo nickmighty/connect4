@@ -1,5 +1,3 @@
-
-
 class Game {
     constructor(playerRed, playerWhite, whoStarts) {
         this.playerRed = playerRed;
@@ -16,9 +14,7 @@ class Game {
     }
 
     showGameBoard() {
-        // console.log("\x1b[33m")
         return Object.values(this.gameBoard);
-        // return this.gameBoard;
     }
 
     addToBoard(num) {
@@ -29,7 +25,7 @@ class Game {
                 this.gameBoard[key][num] = this.currentTurn;
                 const isWin = this.checkToWin(indexOfKey, num, this.currentTurn);
                 if (isWin) {
-                    return isWin;
+                    return this.currentTurn;
                 }
                 break;
             }
@@ -63,7 +59,6 @@ class Game {
                 if (this.gameBoard[key][num] === player) {
                     count++
                     if (count === 4) {
-                        // console.log(player + " " + count)
                         return true;
                     }
                 } else {
@@ -82,7 +77,6 @@ class Game {
                 if (this.gameBoard[key][num] === player) {
                     count++
                     if (count === 4) {
-                        // console.log(player + " " + count)
                         return true;
                     }
                 } else {
@@ -101,7 +95,6 @@ class Game {
             if (this.gameBoard[key][i] === player) {
                 count++
                 if (count === 4) {  
-                    // console.log(player + " " + count)
                     return true;
                 }
             } else {
@@ -118,7 +111,6 @@ class Game {
             if (this.gameBoard[reversedKeys[i]][col] === player) {
                 count++
                 if (count === 4) {  
-                    // console.log(player + " " + count)
                     return true;
                 }
             } else {
