@@ -23,9 +23,9 @@
 
 ### **Installation**
 
-inquirer
-figlet
-tty-table
+ - inquirer
+ - figlet
+ - tty-table
 
 ---
 
