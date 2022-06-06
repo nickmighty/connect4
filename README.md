@@ -31,6 +31,8 @@ tty-table
 
 ### **Usage**
 
+play your friends!
+
 ![Screen Shot 2022-06-05 at 8 37 28 PM](https://user-images.githubusercontent.com/67135603/172080721-fe1163ef-c169-4c11-a1fd-50b50d89b6be.png)
 
 
