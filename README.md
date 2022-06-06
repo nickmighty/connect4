@@ -1,34 +1,31 @@
-# Connect 4
-
-
-  # **Good-ReadMe-Generator**    ![Github All Releases](https://img.shields.io/github/contributors/nsando84/connect4)
+# Connect 4   ![Github All Releases](https://img.shields.io/github/contributors/nsando84/connect4)
 
 
 
-  ## **Description**
+## **Description**
 
-  ![Screen Shot 2022-06-05 at 8 37 28 PM](https://user-images.githubusercontent.com/67135603/172080721-fe1163ef-c169-4c11-a1fd-50b50d89b6be.png)
+![Screen Shot 2022-06-05 at 8 37 28 PM](https://user-images.githubusercontent.com/67135603/172080721-fe1163ef-c169-4c11-a1fd-50b50d89b6be.png)
 
-  ### I had some free time this weekend so I made Connect Four for CLI.
+### I had some free time this weekend so I made Connect Four for CLI.
 
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  ### Table of content
-  1. [Installation](#installation)
-  2. [Usage](#usage)
-  3. [License](#license)
-  4. [Contributing](#contributing)
+### Table of content
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
 
 ---
 
 ### **Installation**
 
-    inquirer
-    figlet
-    tty-table
-    
+inquirer
+figlet
+tty-table
+
 ---
 
 ### **Usage**
@@ -48,4 +45,4 @@
 
 #### MIT License
 
-  
+
